@@ -43,8 +43,9 @@ jobs:
         with:
           repository: logseq/logseq
           path: logseq
-       - name: checkout
-         run: |
+       
+      - name: use the latest tag
+        run: |
           cd logseq
           git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
 
