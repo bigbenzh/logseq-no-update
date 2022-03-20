@@ -18,7 +18,7 @@ on:
         description: 'Draft Release? (Beta only, Nightly will always be a non-draft)'
         type: boolean
         required: true
-        default: true
+        default: false
       is-pre-release:
         description: 'Pre Release? (labeled as "PreRelease")'
         type: boolean
