@@ -48,6 +48,8 @@ jobs:
         run: |
           cd logseq
           git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+      - name: move files to workspace
+        run: mv -f ./ ../
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v2
