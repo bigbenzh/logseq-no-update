@@ -50,6 +50,14 @@ jobs:
           git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
       - name: move files to workspace
         run: mv -f logseq/* ./
+        
+      - name: Setup Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: patch
+        run: python patch.py
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v2
